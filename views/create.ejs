@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+
+<div class="container text-center">
+    <div class="container my-3">
+        <h1 class="text-center"><%=bill.name%></h1>
+    <h3 class=text-center>paid by:- <%=bill.payer%></h3>
+    </div>
+    <div class="container my-3">
+        <%var x=1%>
+        <%bill.people.forEach((p)=>{%>
+            <form action="/delete/<%=bill._id%>/<%=p%>" method="POST">
+                <h5><%= x %>. <%=p%>  <span><input class="btn btn-outline-danger" type="submit" value="DELETE"></span></h5>
+            </form>
+            <% x=x+1%>
+        <%})%>
+    </div>
+    <div class="container my-3 dis">
+        <form action="/add/<%= bill._id %>" method="POST" class="form dis">
+            <input type="text" name="friend" placeholder="person name"> 
+            <input type="submit" class="btn btn-outline-warning" value="Add">
+        </form>
+        
+        <form action="/create/<%=bill._id%>" method="POST">
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+</div>

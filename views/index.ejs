@@ -1,0 +1,41 @@
+<%- include("partials/header") %>
+
+
+<% if(currentUser){ %>
+    <form action="/create" method="POST" class="text-center mt-5">
+        <h3>Create Bill</h3>
+        <input type="text" name="billname" placeholder="Bill Name" required class="index my-3 text-center">
+        <input type="text" name="payer" placeholder="Who paid" required class="index my-3 text-center">
+        <input type="number" name="amount" placeholder="Amount" required class="index my-3 text-center">
+        <input type="submit" class="btn btn-primary ">
+    </form>
+    <hr>
+    <h3 class="text-center">OR</h3>
+    <hr>
+<% } %>
+
+<form action="/" method="POST" class="m-3 text-center">
+    <% if(!currentUser) {%>
+    <h3>Check Without Login</h3> <%}else{%>
+    <h3>Simple Calculate</h3> <%}%>
+    <div class="m-3">
+        <label>Who paid the Bill</label>
+        <input type="text" name="Name" placeholder="Name">
+        <label>Amount</label>
+        <input type="number" name="amount" placeholder="Amount">
+    </div>
+    <div class="m-3">
+        <h3>Did he ate?</h3>
+        <input type="radio" name="involve" value="1">
+        <label for="male">yes</label><br>
+        <input type="radio" name="involve" value="0">
+        <label for="female">no</label><br>
+    </div>
+    <div class="m-3">
+        <label>How many other people were there</label>
+        <input type="number" name="extra" placeholder="no. of people">
+    </div>
+    <div class="m-3">
+        <input type="submit" class="btn btn-primary">
+    </div>
+</form>

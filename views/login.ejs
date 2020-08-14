@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+
+<div class="my-2 text-center">
+    <form class="form" action="/login" method="POST">
+        <h3>Login</h3>
+        <input type="text" name="username" placeholder="Username" class="index my-3">
+        <input type="password" name="password" placeholder="Password" class="index my-3">
+        <input type="submit" class="btn btn-primary">
+    </form>
+
+    <hr>
+    <h3 class="text-center">OR</h3>
+    <hr>
+    <form action="/" method="POST" class="m-3 text-center">
+        <div class="m-3">
+            <label>Who paid the Bill</label>
+            <input type="text" name="Name" placeholder="Name">
+            <label>Amount</label>
+            <input type="number" name="amount" placeholder="Amount">
+        </div>
+        <div class="m-3">
+            <h3>Did he ate?</h3>
+            <input type="radio" name="involve" value="1">
+            <label for="male">yes</label><br>
+            <input type="radio" name="involve" value="0">
+            <label for="female">no</label><br>
+        </div>
+        <div class="m-3">
+            <label>How many other people were there</label>
+            <input type="number" name="extra" placeholder="no. of people">
+        </div>
+        <div class="m-3">
+            <input type="submit" class="btn btn-primary">
+        </div>
+    </form>
+</div>
